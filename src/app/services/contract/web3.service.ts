@@ -29,7 +29,7 @@ export class Web3Service {
       walletconnect: {
         package: WalletConnectProvider, // required
         options: {
-          infuraId: 'env', // required change this with your own infura id
+          infuraId: 'env',
           description: 'Scan the qr code and sign in',
           qrcodeModalOptions: {
             mobileLinks: [
@@ -54,9 +54,9 @@ export class Web3Service {
     };
 
     this.web3Modal = new Web3Modal({
-      network: "rinkeby", // optional change this with the net you want to use like rinkeby etc
-      cacheProvider: true, // optional
-      providerOptions, // required
+      network: "rinkeby",
+      cacheProvider: true,
+      providerOptions,
       theme: {
         background: "rgb(39, 49, 56)",
         main: "rgb(199, 199, 199)",
@@ -69,7 +69,7 @@ export class Web3Service {
 
 
   async connectAccount() {
-    this.provider = await this.web3Modal.connect(); // set provider
+    this.provider = await this.web3Modal.connect();
     if (this.provider) {
       this.web3js = new Web3(this.provider);
     } // create web3 instance
